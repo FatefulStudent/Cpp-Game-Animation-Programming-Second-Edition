@@ -16,7 +16,12 @@ file(GLOB SOURCES
   tools/*.cpp
 )
 
-add_executable(Main ${SOURCES})
+file(GLOB HEADERS
+  window/*.h
+  tools/*.h
+)
+
+add_executable(Main ${SOURCES} ${HEADERS})
 
 find_package(glfw3 3.3 REQUIRED)
 
