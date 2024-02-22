@@ -1,0 +1,23 @@
+# ide
+.idea/
+.vs/
+
+# VS solution
+*.vcxproj
+*.vcxproj.filters
+*.sln
+
+# Cmake
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+
+# binaries
+*.exe
+*.pdb
+*.obj
+*.ilk
+*.recipe
+
+# logs
+*.tlog
