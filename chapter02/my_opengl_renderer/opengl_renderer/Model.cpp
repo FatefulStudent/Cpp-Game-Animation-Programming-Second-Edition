@@ -2,7 +2,7 @@
 
 void Model::init()
 {
-    mVertexData.vertices = std::vector<OGLVertex>(6);
+    mVertexData.vertices.resize(6);
     mVertexData.vertices[0].position = glm::vec3(-0.5f, -0.5f, 0.5f);
     mVertexData.vertices[1].position = glm::vec3(0.5f, 0.5f, 0.5f);
     mVertexData.vertices[2].position = glm::vec3(-0.5f, 0.5f, 0.5f);

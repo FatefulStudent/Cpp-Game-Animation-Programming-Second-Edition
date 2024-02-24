@@ -1,5 +1,7 @@
 ﻿#include "VertexBuffer.h"
 
+#include "Logger.h"
+
 void VertexBuffer::init()
 {
     glGenVertexArrays(1, &mVAO);
@@ -9,15 +11,17 @@ void VertexBuffer::init()
     glBindBuffer(GL_ARRAY_BUFFER, mVertexVBO);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE,
-        sizeof(OGLVertex), (void *) offsetof(OGLVertex, position));
-    glVertexAttribPointer(1, 2, GL_FLAT, GL_FALSE,
-        sizeof(OGLVertex), (void *) offsetof(OGLVertex, uv));
+        sizeof(OGLVertex), (void*) offsetof(OGLVertex, position));
+    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE,
+        sizeof(OGLVertex), (void*) offsetof(OGLVertex, uv));
 
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
+    
+    Logger::log(1, "%s: VAO and VBO initialized\n", __FUNCTION__);
 }
 
 void VertexBuffer::uploadData(OGLMesh vertexData)
@@ -27,6 +31,7 @@ void VertexBuffer::uploadData(OGLMesh vertexData)
     glBufferData(GL_ARRAY_BUFFER, vertexData.vertices.size() * sizeof(OGLVertex),
         &vertexData.vertices.at(0), GL_DYNAMIC_DRAW);
 
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 }
 
