@@ -5,7 +5,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include "../opengl_renderer/OGLRenderer.h"
-#include "../opengl_renderer/Model.h"
+
+class Model;
 
 enum class KeyboardKeyEnum : uint8_t
 {

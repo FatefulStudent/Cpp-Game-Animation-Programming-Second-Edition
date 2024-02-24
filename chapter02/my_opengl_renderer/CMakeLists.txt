@@ -14,19 +14,21 @@ file(GLOB SOURCES
   Main.cpp
   opengl_renderer/*.cpp
   window/*.cpp
+  model/*.cpp
   tools/*.cpp
   src/glad.c
 )
 
 file(GLOB HEADERS
   opengl_renderer/*.h
+  model/*.h
   window/*.h
   tools/*.h
 )
 
 add_executable(Main ${SOURCES} ${HEADERS})
 
-target_include_directories(Main PUBLIC include src window tools opengl model)
+target_include_directories(Main PUBLIC include src window tools opengl_renderer model)
 
 find_package(glfw3 3.3 REQUIRED)
 set(OpenGL_GL_PREFERENCE GLVND)

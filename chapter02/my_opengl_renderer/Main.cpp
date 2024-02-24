@@ -2,6 +2,7 @@
 
 #include "Window.h"
 #include "Logger.h"
+#include "Model.h"
 
 int main(int argc, char *argv[]) {
   std::unique_ptr<Window> w = std::make_unique<Window>();

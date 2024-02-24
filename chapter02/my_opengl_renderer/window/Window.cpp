@@ -4,6 +4,8 @@
 #include <string>
 #include <unordered_map>
 
+#include "../model/Model.h"
+
 /* Tasks:
 * v 1. Play around with the window title. You can change it at any time after its creation,
 * and it can store a lot of information in an easily accessible place.
